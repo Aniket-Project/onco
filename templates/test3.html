@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Result</title>
+    <!-- Include any additional styling if needed -->
+    <style>
+        /* Additional styling goes here */
+    </style>
+</head>
+
+<body>
+    <h1>Test Result</h1>
+
+    <!-- Display uploaded image -->
+    <img src="{{ url_for('static', filename='uploads/' + image_path) }}" alt="Uploaded Image" style="max-width: 100%;">
+
+    <!-- Display prediction results -->
+    {% if predicted_class %}
+        <p>Predicted Class: {{ predicted_class }}</p>
+        <p>Confidence: {{ confidence }}%</p>
+    {% else %}
+        <p>No prediction available.</p>
+    {% endif %}
+
+    <!-- Link back to the main test page -->
+    <p><a href="/">Back to Test Page</a></p>
+</body>
+
+</html>
